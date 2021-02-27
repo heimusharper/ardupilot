@@ -269,7 +269,9 @@ void GCS_MAVLINK::send_battery_status(const uint8_t instance) const
                                     battery.capacity_remaining_pct(instance),
                                     0, // time remaining, seconds (not provided)
                                     MAV_BATTERY_CHARGE_STATE_UNDEFINED,
-                                    cell_volts_ext); // Cell 11..14 voltages
+                                    cell_volts_ext,
+                                    0,
+                                    MAV_BATTERY_CHARGE_STATE_UNDEFINED); // Cell 11..14 voltages
 }
 
 // returns true if all battery instances were reported
